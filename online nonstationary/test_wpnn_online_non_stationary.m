@@ -16,7 +16,7 @@ nom={'linear','quadratic','cubic'};
 
 num = 2*10^4;
 samples = 10;
-load(['./datasets/non_stationary_dataset_2d_',num2str(num),'_',num2str(samples),'samples.mat'])
+load(['./datasets/non_stationary_dataset.mat'])
 
 x = data{1};
 x_train = xTrain{1};

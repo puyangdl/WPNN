@@ -16,7 +16,7 @@
 clc; clear all; close all;  set(0,'DefaultFigureWindowStyle','docked');
 
 num = 2*10^4;
-load(['./datasets/wpnn_online_stationary_datasets_prequential_',num2str(num),'.mat']);
+load(['./datasets/online_stationary_datasets.mat']);
 
 Nvec=[500];
 bandwidth_set = [0.001];
@@ -27,14 +27,14 @@ x_train = xTrain{1};
 y_test = yTest{1};
 y_train = yTrain{1};
 
-repeat_num = 100;
+repeat_num = 1;
 
 for bd = 1:length(bandwidth_set)
     bandwidth = bandwidth_set(bd);
     for i = 1:length(Nvec)
         N = Nvec(i);
         for j=1:repeat_num
-            fprintf('bkde, data idx %d, window size = %d, bandwidth %.4f \n',j,N ,bandwidth)          
+            fprintf('kde, data idx %d, window size = %d, bandwidth %.4f \n',j,N ,bandwidth)          
             [time_tmp, acc_tmp,testing_lbl] = fun_kde_testing_online_window(x_train,y_train,x_test,bandwidth,y_test,N);
             time_used(j,:) = time_tmp(1,:);
             accuracy(j,:) = acc_tmp(1,:);
@@ -56,7 +56,7 @@ clc; clear all; close all;  set(0,'DefaultFigureWindowStyle','docked');
 
 num = 2*10^4;
 
-load(['./datasets/wpnn_online_stationary_datasets_prequential_',num2str(num),'.mat']);
+load(['./datasets/online_stationary_datasets.mat']);
 bandwidth_set = [0.05];
 
 x = data{1};
@@ -65,12 +65,12 @@ x_train = xTrain{1};
 y_test = yTest{1};
 y_train = yTrain{1};
 
-repeat_num = 100;
+repeat_num = 1;
 for bd = 1:length(bandwidth_set)
     bandwidth = bandwidth_set(bd);
     i=1;
     for j=1:repeat_num
-        fprintf('ckde, data idx %d, bandwidth %.4f \n',j,bandwidth)
+        fprintf('kde, data idx %d, bandwidth %.4f \n',j,bandwidth)
         
         [time_tmp, acc_tmp,testing_lbl] = fun_kde_testing_online_latest_pt(x_train,y_train,x_test,bandwidth,y_test);
         time_used(j,:) = time_tmp(1,:);

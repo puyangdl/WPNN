@@ -17,7 +17,7 @@ nom={'linear','quadratic','cubic'};
 
 %load data
 num = 2*10^4;
-load(['./datasets/wpnn_online_stationary_datasets_prequential_',num2str(num),'.mat']);
+load(['./datasets/online_stationary_datasets.mat']);
 
 %optimal hyperparameters: linear b-spline + j0=1
 levelv=1;

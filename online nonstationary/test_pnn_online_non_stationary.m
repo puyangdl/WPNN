@@ -17,7 +17,7 @@ clc; clear all; close all;  set(0,'DefaultFigureWindowStyle','docked');
 
 num = 2*10^4;
 samples = 10;
-load(['./datasets/non_stationary_dataset_2d_',num2str(num),'_',num2str(samples),'samples.mat'])
+load(['./datasets/non_stationary_dataset.mat'])
 
 Nvec=[500];
 bandwidth_set = [0.001];
@@ -45,7 +45,7 @@ for bd = 1:length(bandwidth_set)
         end
         total_accuracy(i,:)=mean(accuracy,1);
         total_test_label{i,:} = test_label;
-        
+        total_time_used(i,:) = mean(time_used,1);
     end
     accuracy_stationary{bd}.accuracy = total_accuracy;
     accuracy_stationary{bd}.time = total_time_used;
@@ -63,11 +63,11 @@ clc; clear all; close all;  set(0,'DefaultFigureWindowStyle','docked');
 num = 2*10^4;
 samples = 10;
 
-load(['./datasets/non_stationary_dataset_2d_',num2str(num),'_',num2str(samples),'samples.mat'])
+load(['./datasets/non_stationary_dataset.mat'])
 
 bandwidth_set = [0.01];
 
-repeat_num = 100;
+repeat_num = 1;
 
 x = data{1};
 x_test = xTest{1};
