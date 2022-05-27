@@ -1,9 +1,9 @@
 
 # Wavelet Probabilistic Neural Networks
 
-This repo contains source codes for the paper **Wavelet Probabilistic Neural Networks (WPNN)** published in IEEE Transactions on Neural Networks and Learning Systems.
+This repo contains source codes for the paper [**Wavelet Probabilistic Neural Networks (WPNN)**](https://doi.org/10.1109/TNNLS.2022.3174705) published in IEEE Transactions on Neural Networks and Learning Systems.
 
-Link to the paper: TBD
+Link to the paper: [WPNN](https://doi.org/10.1109/TNNLS.2022.3174705)
 
   
 
@@ -18,19 +18,19 @@ Link to the paper: TBD
 * Online stationary experiment (./online stationary/test_wpnn_online_stationary.m): 
 	* Main function:
 		fun_WPNN_pdf_online_stationary_prequential.m - function to update the network parameter in the stationary environment. 
-	* Run "./online stationary/test_wpnn_online_stationary.m"
+	* Run *./online stationary/test_wpnn_online_stationary.m*
 
 * Online non-stationary (./online nonstationary/test_wpnn_online_non_stationary.m): 
 	* Main function:
 	fun_WPNN_pdf_online_nonstationary_prequential.m - function to update the network parameter in the non-stationary environment. 
-	* Run *./online nonstationary/test_wpnn_online_non_stationary.m* & *test_wpnn_online_non_stationary_nsl_kdd.m* for synthetic and real-world datasets.
+	* Run *./online nonstationary/test_wpnn_online_non_stationary.m*
 
 * Options:
 	* Modify the hyper-parameters accordingly in the main funcitons: 
 		* the order B-spline, 
 		* <img src="https://render.githubusercontent.com/render/math?math=j_0">
 		* <img src="https://render.githubusercontent.com/render/math?math=\alpha"> 
-	* Replace your own datasets:
+	* Use your own datasets:
 		* load('./datasets/_YOUR_OWN_DATASET_')
 
 ## File Directory
@@ -68,13 +68,34 @@ Link to the paper: TBD
     │       ├── fun_kde_testing_online_window.m
     │       ├── funmyKDE.m
     │       └── test_pnn_online_stationary.m
-    └── datasetss
-        ├── non_stationary_dataset.mat.mat
-        ├── http.mat 
-        └── NSL_KDD.mat
+    └── datasets
+        └── non_stationary_dataset.mat.mat
 
 ```
 
+## Dataset
+
+|   Data   |                                   Link                                   |
+|:--------:|:------------------------------------------------------------------------:|
+| http     | [link](http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html)          |
+| NSL-KDD  | [link](https://www.unb.ca/cic/datasets/nsl.html)                         |
+| YahooLab | [link](https://webscope.sandbox.yahoo.com/catalog.php?datatype=s&did=70) |
+
+
+## Citation
+```
+@ARTICLE{9782514,
+  author={Garc&#x00ED;a-Trevi&#x00F1;o, Edgar S. and Yang, Pu and Barria, Javier A.},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Wavelet Probabilistic Neural Networks}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1-14},
+  doi={10.1109/TNNLS.2022.3174705}}
+```
+
+##
 Authors: E. S. Garcia-Trevino, Pu Yang, and J. A. Barria
 
 Title: Wavelet Probabilistic Neural Networks
